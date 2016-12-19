@@ -1,0 +1,23 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile_nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "1935:1935"
+    volumes:
+      # - /vagrant:/usr/local/nginx/html
+      - ./:/usr/local/nginx/html
+
+  ffmpeg:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile_ffmpeg
+    container_name: ffmpeg
+    environment:
+      - TARGET_RTMP_URL=rtmp://192.168.0.100:1935/live/mdst
+    links:
+      - nginx
