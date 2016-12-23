@@ -1,4 +1,4 @@
-FROM jrottenberg/ffmpeg
+FROM jrottenberg/ffmpeg:3.2-centos
 
 COPY BigBuckBunny.mp4 ./
 COPY start.sh ./

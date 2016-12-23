@@ -18,6 +18,6 @@ services:
       dockerfile: ./Dockerfile_ffmpeg
     container_name: ffmpeg
     environment:
-      - TARGET_RTMP_URL=rtmp://192.168.0.100:1935/live/mdst
+      - TARGET_RTMP_IP=rtmp://192.168.0.100:1935
     links:
       - nginx

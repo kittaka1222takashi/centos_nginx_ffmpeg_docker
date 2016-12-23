@@ -1,4 +1,5 @@
 FROM centos:latest
+# FROM jrottenberg/ffmpeg:3.2-centos
 RUN yum update -y && \
     yum -y install gcc pcre-devel openssl openssl-devel wget unzip tar git make && \
     useradd --shell /sbin/nologin nginx && \
